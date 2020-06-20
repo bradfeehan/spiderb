@@ -16,3 +16,6 @@ AllCops:
 Metrics/BlockLength:
   ExcludedMethods:
     - RSpec.describe
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented

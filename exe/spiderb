@@ -2,3 +2,7 @@
 # frozen_string_literal: true
 
 require 'spiderb'
+
+path = File.expand_path('../tmp', __dir__)
+
+Spiderb.crawl 'https://bradfeehan.com', to: path

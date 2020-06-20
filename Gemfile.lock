@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     spiderb (0.1.0)
+      faraday (~> 1.0, >= 1.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -9,7 +10,10 @@ GEM
     ast (2.4.1)
     coderay (1.1.3)
     diff-lcs (1.3)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     method_source (1.0.0)
+    multipart-post (2.1.1)
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)

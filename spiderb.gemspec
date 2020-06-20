@@ -1,4 +1,4 @@
-require_relative 'lib/spiderb/version'
+require_relative "lib/spiderb/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "spiderb"

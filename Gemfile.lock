@@ -3,6 +3,7 @@ PATH
   specs:
     spiderb (0.1.0)
       faraday (~> 1.0, >= 1.0.1)
+      nokogiri (~> 1.10, >= 1.10.9)
 
 GEM
   remote: https://rubygems.org/
@@ -13,7 +14,10 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     method_source (1.0.0)
+    mini_portile2 (2.4.0)
     multipart-post (2.1.1)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)

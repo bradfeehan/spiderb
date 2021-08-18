@@ -5,4 +5,17 @@ require 'spiderb'
 
 path = File.expand_path('../tmp', __dir__)
 
-Spiderb.crawl 'https://bradfeehan.com', to: path
+Spiderb.crawl(
+  'https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html',
+  base_urls: [
+    'https://docs.aws.amazon.com/AmazonS3/latest',
+    'https://docs.aws.amazon.com/assets',
+    'https://docs.aws.amazon.com/s3',
+    'https://d1ge0kk1l5kms0.cloudfront.net',
+    'https://a0.awsstatic.com',
+  ],
+  tags: {
+    'meta[@name="tocs"]': 'content',
+  },
+  to: path
+)

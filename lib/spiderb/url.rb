@@ -9,7 +9,7 @@ module Spiderb
 
     attr_reader :uri
 
-    delegate %i[to_s] => :uri
+    delegate %i[host path request_uri to_s] => :uri
     delegate %i[hash] => :to_s
 
     alias to_str to_s

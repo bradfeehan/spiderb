@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 1.0', '>= 1.0.1'
   spec.add_dependency 'faraday_middleware'
+  spec.add_dependency 'faraday-cookie_jar'
   spec.add_dependency 'nokogiri', '~> 1.10', '>= 1.10.9'
 
   spec.add_development_dependency 'pry'

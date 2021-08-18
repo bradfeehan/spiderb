@@ -10,21 +10,24 @@ module Spiderb
         a: 'href',
         img: 'src',
         link: 'href',
-        script: 'src'
+        script: 'src',
       }.freeze
 
-      TAGS_XPATH = "(#{TAGS.map { |tag, attr| "//#{tag}/@#{attr}" }.join('|')})"
+      def initialize(body:, type:, url:, tags:)
+        super(body: body, type: type, url: url)
+        @tags = tags.nil? ? {} : tags
+      end
 
       def body
         nokogiri.to_s
       end
 
       def links
-        nokogiri.xpath(TAGS_XPATH)
+        link_nodes.map(&:to_s).map(&:strip)
       end
 
       def rewrite_links
-        links.each do |node|
+        link_nodes.each do |node|
           value = yield node
           node.content = value unless value.nil?
         end
@@ -34,6 +37,15 @@ module Spiderb
 
       def nokogiri
         @nokogiri ||= Nokogiri.HTML(@body)
+      end
+
+      def link_nodes
+        nokogiri.xpath(tags_xpath)
+      end
+
+      def tags_xpath
+        xpaths = TAGS.merge(@tags).map { |tag, attr| "//#{tag}/@#{attr}" }
+        '(' + xpaths.join('|') + ')'
       end
     end
   end

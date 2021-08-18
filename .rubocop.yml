@@ -19,3 +19,9 @@ Metrics/BlockLength:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
